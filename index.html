@@ -19,12 +19,21 @@
 			else
 				imageIndex = '1';//When the cycle is comple, start from the begining
 		}
-		setInterval('imageChange()', 2000);//Refresh authomatically after 2 second.
-		//Please don't use the function without quotes. It doesn't work.
+		var timer = setInterval('imageChange()', 2000);
+		/* Refresh authomatically after 2 second.
+		 * setInterval('imageChange()', 2000);
+		 * This is the original version. 
+		 * But I have added a variable to make it use again later at the clearInterval function.
+		 * Please don't use the function without quotes. It doesn't work.
+		 */
+
 
 	</script>
 </head>
 <body>
-<img src="images/1.png" alt="Screenshot" align="center" id="img" onclick="imageChange();">
+<img src="images/1.png" alt="Screenshot" align="center" id="img" onclick="clearInterval(timer);">
+<!-- 
+* when we want to stop the timer, we can use clearInterval("variable name here without quotes.") to stop from hapenning.
+* See onClick inside <img> -->
 </body>
 </html>
