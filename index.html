@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple slideshow</title>
+	<script type="text/javascript">
+	//This Slide show happens when the image is clicked only.
+		
+			var imageIndex ='2';//"Image1" is already set through the src. So no need to start from "1"
+			function imageChange() {
+			var img = document.getElementById('img');
+			if (imageIndex<=15) {
+				img.src = "images/"+imageIndex+".png";
+				//document.write(imageIndex);//For testing purposes
+				imageIndex++;
+				/*Do not add a loop here. 			
+				If you try to add a loop, it will directly jump to the last image since it cannot display all the images at the same time.
+				*/	
+				}	
+			else
+				imageIndex = '1';//When the cycle is comple, start from the begining
+		}
+		setInterval('imageChange()', 2000);//Refresh authomatically after 2 second.
+		//Please don't use the function without quotes. It doesn't work.
+
+	</script>
+</head>
+<body>
+<img src="images/1.png" alt="Screenshot" align="center" id="img" onclick="imageChange();">
+</body>
+</html>
